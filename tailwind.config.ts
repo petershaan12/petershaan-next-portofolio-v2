@@ -4,11 +4,11 @@ import {fontFamily} from "tailwindcss/defaultTheme"
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -20,7 +20,11 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans]
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+      },
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(rgba(49, 80, 39, 0.2) 0%, rgba(11, 37, 20, 0.1) 52.58%, rgba(153, 93, 8, 0) 100%)",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -79,6 +83,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
-} satisfies Config
+} satisfies Config;
 
 export default config

@@ -4,43 +4,152 @@ import { cn, sortPosts } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { PostItem } from "@/components/post-item";
+import Image from "next/image";
 
 export default function Home() {
-  const latestPosts = sortPosts(posts).slice(0, 5);
+  const latestPosts = sortPosts(posts).slice(0, 2);
+
   return (
     <>
-      <section className="space-y-6 pb-8 pt-6 md:pb-12 mb:mt-10 lg:py-32 ">
-        <div className="container flex flex-col gap-4 text-center">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-balance">
-            Hello, I&apos;m Peter Shaan 👋
+      <section className="space-y-6 pb-8 pt-6 md:pb-12 mb:mt-10 lg:pt-12 ">
+        <div className="container flex flex-col gap-4">
+          <h1 className=" sm:text-2xl font-black text-balance font-helvetica ">
+            hey 🐲, i&apos;m Peter Shaan
           </h1>
-          <p className="max-w-[42rem] mx-auto text-muted-foreground sm:text-xl text-balance">
-            welcome to my blog template build using tailwind, shadcn, velite,
-            and nextjs14
+          <p className=" mx-auto text-muted-foreground text-balance text-gray-100 ">
+            21 years old from 🇮🇩,🖥️ Student of Informatic Technology, and also
+            Content Creator and Video Editor
           </p>
-          <div className="flex flex-col gap-4 justify-center sm:flex-row">
+          <div className="flex flex-col gap-4 sm:flex-row">
             <Link
-              href="/blog"
-              className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-fit")}
+              href="mailto:contactpetershaan@gmail.com"
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "w-full h-10 sm:w-fit bg-green-400 hover:bg-green-800 hover:text-white text-black"
+              )}
             >
-              View my blog
+              Email Me
             </Link>
             <Link
-              href={siteConfig.links.github}
-              target="_blank"
+              href="/projects"
               rel="noreferrer"
               className={cn(
                 buttonVariants({ variant: "outline" }),
-                "w-full sm:w-fit"
+                "w-full sm:w-fit hover:bg-green-300/10 border-green-200 text-green-100 hover:text-green-100"
               )}
             >
-              Github
+              See My Projects
             </Link>
           </div>
         </div>
       </section>
-      <section className="container max-w-4xl py-6 lg:py-10 flex flex-col space-y-6 mt-60 ">
-        <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center">
+      <section className="grid grid-cols-3 px-5 gap-2">
+        <div className="row-span-2">
+          <Image
+            src="/me/1.png"
+            alt="me1.png"
+            className="rounded-lg object-cover w-full h-full"
+            width={500}
+            height={200}
+          />
+        </div>
+        <div>
+          <Image
+            src="/me/2.png"
+            alt="me1.png"
+            className="rounded-lg object-cover w-full h-full"
+            width={500}
+            height={500}
+          />
+        </div>
+        <div className="relative">
+          <Image
+            src="/me/4.jpg"
+            alt="me1.png"
+            className="rounded-lg object-cover w-full h-full"
+            width={500}
+            height={500}
+          />
+        </div>
+        <div>
+          <Image
+            src="/me/3.png"
+            alt="me1.png"
+            className="rounded-lg object-cover w-full h-full"
+            width={500}
+            height={500}
+          />
+        </div>
+
+        <div>
+          <Image
+            src="/me/5.png"
+            alt="me1.png"
+            className="rounded-lg object-cover w-full h-full"
+            width={500}
+            height={500}
+          />
+        </div>
+      </section>
+      <section className="container max-w-4xl py-6 lg:py-10 flex flex-col space-y-6">
+        <h2 className="text-2xl font-black text-center font-helvetica">
+          Experience
+        </h2>
+        <hr className="my-2" />
+        <div className="prose prose-zinc dark:prose-invert max-w-full w-full">
+          <p className="dark:text-gray-400 ">August 2023 - Present</p>
+          <h1 className="text-xl my-2">
+            <span className="font-helvetica">Programmer at</span>
+            <a
+              href="https://unai.edu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline px-2"
+            >
+              Universitas Advent Indonesia
+            </a>
+          </h1>
+
+          <p className="dark:text-gray-400 ">
+            Create & Develop Website{" "}
+            <a
+              href="https://unai.edu"
+              className="underline font-medium text-black dark:text-gray-400 "
+            >
+              unai.edu
+            </a>{" "}
+            <span>& </span>
+            <a
+              href="https://news.unai.edu"
+              className="underline font-medium text-black dark:text-gray-400 "
+            >
+              news.unai.edu
+            </a>{" "}
+            (NEW 2024) <br /> Development & Database Administrator Module UNAI
+            (Universitas Advent Indonesia)
+          </p>
+          <Image
+            src="/projects/unaiRevamp.png"
+            width={900}
+            height={500}
+            className="rounded-lg"
+            alt="unai_revamp"
+          />
+
+          <a>unai.edu</a>
+
+          <h3 id="stack-used" data-svelte-h="svelte-ghvkof">
+            Stack used
+          </h3>
+          <ul>
+            <li>php</li>
+            <li>Bootstrap</li>
+            <li>mysql</li>
+          </ul>
+        </div>
+      </section>
+      <section className="container max-w-4xl pb-6 flex flex-col">
+        <h2 className="text-2xl font-black text-center font-helvetica pb-5">
           Latest Posts
         </h2>
         <ul className="flex flex-col ">

@@ -1,48 +1,70 @@
-import { siteConfig } from "@/config/site";
+"use client";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { buttonVariants } from "./ui/button";
-import { Icons } from "./icons";
 import { MainNav } from "./main-nav";
 import { MobileNav } from "./mobile-nav";
 import { ModeToogle } from "./mode-toggle";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const [header, setHeader] = useState(false);
+  const scrollHeader = () => {
+    if (window.scrollY >= 20) {
+      setHeader(true);
+    } else {
+      setHeader(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHeader);
+
+    return () => {
+      window.addEventListener("scroll", scrollHeader);
+    };
+  }, []);
   return (
-    <header className="sticky top-0 w-full border-b border-border bg-bakcground/95 backdrop:blur supports-[backdrop-filter]:bg-background/60 ">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
+    <header
+      className={`${
+        header ? "border-b border-border " : ""
+      } sticky top-0 w-full bg-background/30 backdrop-blur-xl`}
+    >
+      <div className="container flex h-14 max-w-screen-2xl items-center ">
         <MainNav />
-        <div className="flex flex-1 items-center justify-end space-x-2">
-          <nav className="flex items-center">
+        <div className="flex flex-1 items-center justify-end ">
+          <nav className="flex items-center  space-x-6">
             <Link
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
+              href="/blog"
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary hidden sm:inline-flex",
+                pathname === "/blog" ? "text-foreground" : "text-foreground/60"
+              )}
             >
-              <div
-                className={cn(
-                  buttonVariants({ variant: "ghost" }),
-                  "w-10 px-0 hidden sm:inline-flex"
-                )}
-              >
-                <Icons.gitHub className="h-4 w-4" />
-                <span className="sr-only">Github</span>
-              </div>
+              blog
             </Link>
             <Link
-              href={siteConfig.links.instagram}
-              target="_blank"
-              rel="noreferrer"
+              href="/projects"
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary hidden sm:inline-flex",
+                pathname === "/projects"
+                  ? "text-foreground"
+                  : "text-foreground/60"
+              )}
             >
-              <div
-                className={cn(
-                  buttonVariants({ variant: "ghost" }),
-                  "w-10 px-0 hidden sm:inline-flex"
-                )}
-              >
-                <Icons.instagram className="h-4 w-4" />
-                <span className="sr-only">Twitter</span>
-              </div>
+              projects
+            </Link>
+            <Link
+              href="/tools"
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary hidden sm:inline-flex",
+                pathname === "/projects"
+                  ? "text-foreground"
+                  : "text-foreground/60"
+              )}
+            >
+              tools
             </Link>
             <ModeToogle />
             <MobileNav />

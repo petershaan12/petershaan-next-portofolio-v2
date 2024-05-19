@@ -21,14 +21,23 @@ export function MobileNav() {
         </Button>
       </SheetTrigger>
       <SheetContent side="right">
-        <MobileLink onOpenChange={setOpen} href="/" className="flex items-center">
-            <Icons.logo className="mr-2 h-4 w-4" />
+        <MobileLink
+          onOpenChange={setOpen}
+          href="/"
+          className="flex items-center"
+        >
+          <Icons.logo className="mr-2 h-4 w-4" />
         </MobileLink>
-        <div className="flex flex-col gap-3 mt-3">
-            <MobileLink onOpenChange={setOpen} href="/blog">Blog</MobileLink>
-            <MobileLink onOpenChange={setOpen} href="/about">About</MobileLink>
-            <Link target="_blank" rel="noreferrer" href={siteConfig.links.github}>Github</Link>
-            <Link target="_blank" rel="noreferrer" href={siteConfig.links.instagram}>Instagram</Link>
+        <div className="flex flex-col gap-3 mt-8">
+          <MobileLink onOpenChange={setOpen} href="/blog">
+            Blog
+          </MobileLink>
+          <MobileLink onOpenChange={setOpen} href="/projects">
+            Projects
+          </MobileLink>
+          <MobileLink onOpenChange={setOpen} href="/tools">
+            Tools
+          </MobileLink>
         </div>
       </SheetContent>
     </Sheet>

@@ -45,10 +45,10 @@
       --popover: 222.2 84% 4.9%;
       --popover-foreground: 210 40% 98%;
 
-      --primary: 210 40% 98%;
+      --primary: 0 0% 98%;
       --primary-foreground: 222.2 47.4% 11.2%;
 
-      --secondary: 217.2 32.6% 17.5%;
+      --secondary: 0 0% 17.5%;
       --secondary-foreground: 210 40% 98%;
 
       --muted: 217.2 32.6% 17.5%;
@@ -60,7 +60,7 @@
       --destructive: 0 62.8% 30.6%;
       --destructive-foreground: 210 40% 98%;
 
-      --border: 217.2 32.6% 17.5%;
+      --border: 0 0% 20%;
       --input: 217.2 32.6% 17.5%;
       --ring: 212.7 26.8% 83.9%;
     }
@@ -74,3 +74,24 @@
       @apply bg-background text-foreground;
     }
   }
+
+  .font-helvetica {
+    font-family: 'Helvetica-Bold', sans-serif;
+  }
+  
+  
+  @font-face {
+    font-family: 'Helvetica-Bold';
+    src: url('/Helvetica-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  .css-gradient {
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    height: 280px;
+    z-index: 1;
+    opacity: 100;
+}

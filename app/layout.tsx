@@ -31,14 +31,15 @@ export default function RootLayout({
     <html lang="en" className="scroll-pt-[3.5rem]" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased ",
           inter.variable
         )}
       >
         <Providers>
-          <div className="relative flex min-h-dvh flex-col bg-background">
+          <div className="relative flex min-h-dvh flex-col ">
             <SiteHeader />
-            <main className="flex-1">{children}</main>
+            <div className="css-gradient bg-custom-gradient"></div>
+            <main className="flex-1 max-w-2xl mx-auto">{children}</main>
             <SiteFooter />
           </div>
         </Providers>
