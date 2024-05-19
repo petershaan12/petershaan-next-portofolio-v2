@@ -35,7 +35,7 @@ export default function Home() {
               rel="noreferrer"
               className={cn(
                 buttonVariants({ variant: "outline" }),
-                "w-full sm:w-fit hover:bg-green-300/10 border-green-200 text-green-100 hover:text-green-100"
+                "w-full sm:w-fit hover:bg-green-300/10 dark:border-green-200 dark:text-green-100 hover:text-green-100"
               )}
             >
               See My Projects
