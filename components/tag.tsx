@@ -7,7 +7,6 @@ interface TagProps {
   current?: boolean;
   count?: number;
 }
-
 export function Tag({ tag, current, count }: TagProps) {
   return (
     <Link
@@ -17,8 +16,7 @@ export function Tag({ tag, current, count }: TagProps) {
       })}
       href={`/tags/${slug(tag)}`}
     >
-      {tag}
-      {count ? `(${count})` : null}
+      {tag} {count ? `(${count})` : null}
     </Link>
   );
 }
