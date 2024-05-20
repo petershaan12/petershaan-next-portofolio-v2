@@ -18,7 +18,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
 }) => {
   return (
     <a href={url} target="_blank" rel="noopener noreferrer">
-      <div className="rounded-xl overflow-clip relative transition-all border border-transparent dark:hover:border-white hover:border-black cursor-pointer">
+      <div className="rounded-xl overflow-clip relative -z-10 transition-all border border-transparent dark:hover:border-white hover:border-black cursor-pointer">
         <Image
           alt={`project_${title.replace(/\s+/g, "").toLowerCase()}`}
           src={src}

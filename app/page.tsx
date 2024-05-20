@@ -25,7 +25,7 @@ export default async function Home() {
   return (
     <>
       <section className="space-y-6 pb-8 pt-6 md:pb-12 mb:mt-10 lg:pt-12 ">
-        <div className="container flex flex-col gap-4">
+        <div className="container flex flex-col gap-4 px-8">
           <h1 className=" sm:text-2xl font-black text-balance font-helvetica ">
             hey 🐲, i&apos;m Peter Shaan
           </h1>
@@ -56,7 +56,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <section className="grid grid-cols-3 px-5 gap-2">
+      <section className="grid grid-cols-3 px-8 gap-3">
         <div className="row-span-2">
           <Image
             src="/me/1.png"

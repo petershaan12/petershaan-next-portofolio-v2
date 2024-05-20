@@ -11,7 +11,7 @@ const redis = Redis.fromEnv();
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Peter Blog",
   description: "Peter Blog",
 };
 

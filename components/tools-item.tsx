@@ -28,7 +28,7 @@ const ToolsItem: React.FC<ToolsItemProps> = ({
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative group border dark:border-gray-400 rounded-md p-4 transition-all hover:border-black"
+      className="relative -z-10 group border dark:border-gray-400 rounded-md p-4 transition-all hover:border-black"
     >
       <Image
         src={imageSrc}
