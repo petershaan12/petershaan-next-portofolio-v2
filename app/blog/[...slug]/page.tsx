@@ -6,6 +6,13 @@ import "@/public/styles/mdx.css";
 import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
 import { Tag } from "@/components/tag";
+import ReportView from "./view";
+
+import { Redis } from "@upstash/redis";
+import { Eye } from "lucide-react";
+
+const redis = Redis.fromEnv();
+export const revalidate = 0;
 
 interface PostPageProps {
   params: {
@@ -72,8 +79,13 @@ export default async function PostPage({ params }: PostPageProps) {
     notFound();
   }
 
+  const views = await redis.mget<number[]>(
+    ["pageviews", "posts", post.slug].join(":")
+  );
+
   return (
     <article className="container py-6 prose dark:prose-invert max-w-3xl mx-auto">
+      <ReportView slug={post.slug} />
       <h1 className="mb-2 text-2xl font-helvetica">{post.title}</h1>
       <div className="flex gap-2 mb-2">
         {post.tags?.map((tag) => (
@@ -83,7 +95,9 @@ export default async function PostPage({ params }: PostPageProps) {
       {post.description ? (
         <p className="text-sm mt-0 text-muted-foreground">{post.description}</p>
       ) : null}
-
+      <div className="flex items-center space-x-4">
+        <Eye className="mr-2" /> {views} views
+      </div>
       <hr className="my-4" />
       <MDXContent code={post.body} />
     </article>

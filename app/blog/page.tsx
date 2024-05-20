@@ -5,6 +5,10 @@ import { Tag } from "@/components/tag";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getAllTags, sortPosts, sortTagsByCount } from "@/lib/utils";
 import { Metadata } from "next";
+import { Redis } from "@upstash/redis";
+
+const redis = Redis.fromEnv();
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -32,6 +36,15 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   const tags = getAllTags(posts);
   const sortedTags = sortTagsByCount(tags);
 
+  const views = (
+    await redis.mget<number[]>(
+      ...displayPosts.map((p) => ["pageviews", "posts", p.slug].join(":"))
+    )
+  ).reduce((acc, v, i) => {
+    acc[displayPosts[i].slug] = v ?? 0;
+    return acc;
+  }, {} as Record<string, number>);
+
   return (
     <div className="container max-w-4xl py-6 lg:py-10">
       <div className="flex flex-col items-start gap-4 md:flex-row justify-between md:gap-8">
@@ -57,6 +70,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                       title={title}
                       description={description}
                       tags={tags}
+                      views={views}
                     />
                   </li>
                 );

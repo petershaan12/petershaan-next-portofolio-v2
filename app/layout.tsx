@@ -39,7 +39,7 @@ export default function RootLayout({
           <div className="relative flex min-h-dvh flex-col ">
             <SiteHeader />
             <div className="css-gradient bg-custom-gradient"></div>
-            <main className="flex-1 max-w-2xl mx-auto">{children}</main>
+            <main className="flex-1 max-w-3xl mx-auto">{children}</main>
             <SiteFooter />
           </div>
         </Providers>

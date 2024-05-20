@@ -1,8 +1,9 @@
-import { Calendar } from "lucide-react";
+import { Calendar, Eye } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { cn, formatDate } from "@/lib/utils";
 import { Tag } from "./tag";
+import { postcss } from "tailwindcss";
 
 interface PostItemProps {
   slug: string;
@@ -10,6 +11,7 @@ interface PostItemProps {
   description?: string;
   date: string;
   tags?: Array<string>;
+  views?: any;
 }
 
 export function PostItem({
@@ -18,6 +20,7 @@ export function PostItem({
   description,
   date,
   tags,
+  views,
 }: PostItemProps) {
   return (
     <article className="flex flex-col gap-2 border-border border-b py-3">
@@ -42,12 +45,10 @@ export function PostItem({
             <time dateTime={date}>{formatDate(date)}</time>
           </dd>
         </dl>
-        <Link
-          href={slug}
-          className={cn(buttonVariants({ variant: "link" }), "py-0 text-sm")}
-        >
-          Read More
-        </Link>
+        <span className="flex items-centertext-xs">
+          {" "}
+          <Eye className="mr-2 w-5 h-5" /> {views[slug]} views
+        </span>
       </div>
     </article>
   );

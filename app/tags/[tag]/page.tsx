@@ -6,20 +6,31 @@ import { getAllTags, getPostsByTagSlug, sortTagsByCount } from "@/lib/utils";
 import { slug } from "github-slugger";
 import { Metadata } from "next";
 
+import { Redis } from "@upstash/redis";
+
+const redis = Redis.fromEnv();
+export const revalidate = 0;
+
 interface TagPageProps {
   params: {
     tag: string;
   };
 }
 
-export async function generateMetadata({
-  params,
-}: TagPageProps): Promise<Metadata> {
-  const { tag } = params;
-  return {
-    title: tag,
-    description: `Posts on the topic of ${tag}`,
-  };
+
+export async function getPostViews(
+  displayPosts: { slug: string }[]
+): Promise<Record<string, number>> {
+  const views = (
+    await redis.mget<number[]>(
+      ...displayPosts.map((p) => ["pageviews", "posts", p.slug].join(":"))
+    )
+  ).reduce((acc, v, i) => {
+    acc[displayPosts[i].slug] = v ?? 0;
+    return acc;
+  }, {} as Record<string, number>);
+
+  return views;
 }
 
 export const generateStaticParams = () => {
@@ -28,13 +39,22 @@ export const generateStaticParams = () => {
   return paths;
 };
 
-export default function TagPage({ params }: TagPageProps) {
+export default async function TagPage({ params }: TagPageProps) {
   const { tag } = params;
   const title = tag.split("-").join(" ");
 
   const displayPosts = getPostsByTagSlug(posts, tag);
   const tags = getAllTags(posts);
   const sortedTags = sortTagsByCount(tags);
+
+  const views = (
+    await redis.mget<number[]>(
+      ...displayPosts.map((p) => ["pageviews", "posts", p.slug].join(":"))
+    )
+  ).reduce((acc, v, i) => {
+    acc[displayPosts[i].slug] = v ?? 0;
+    return acc;
+  }, {} as Record<string, number>);
 
   return (
     <div className="container max-w-4xl py-6 lg:py-10">
@@ -60,6 +80,7 @@ export default function TagPage({ params }: TagPageProps) {
                       title={title}
                       description={description}
                       tags={tags}
+                      views={views}
                     />
                   </li>
                 );

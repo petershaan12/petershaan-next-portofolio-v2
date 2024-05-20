@@ -59,9 +59,7 @@ export function SiteHeader() {
               href="/tools"
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary hidden sm:inline-flex",
-                pathname === "/projects"
-                  ? "text-foreground"
-                  : "text-foreground/60"
+                pathname === "/tools" ? "text-foreground" : "text-foreground/60"
               )}
             >
               tools

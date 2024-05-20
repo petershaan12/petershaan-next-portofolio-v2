@@ -2,12 +2,25 @@ import Link from "next/link";
 import { posts } from "#site/content";
 import { cn, sortPosts } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
 import { PostItem } from "@/components/post-item";
 import Image from "next/image";
 
-export default function Home() {
+import { Redis } from "@upstash/redis";
+
+const redis = Redis.fromEnv();
+export const revalidate = 0;
+
+export default async function Home() {
   const latestPosts = sortPosts(posts).slice(0, 2);
+
+  const views = (
+    await redis.mget<number[]>(
+      ...latestPosts.map((p) => ["pageviews", "posts", p.slug].join(":"))
+    )
+  ).reduce((acc, v, i) => {
+    acc[latestPosts[i].slug] = v ?? 0;
+    return acc;
+  }, {} as Record<string, number>);
 
   return (
     <>
@@ -161,6 +174,7 @@ export default function Home() {
                 description={post.description}
                 date={post.date}
                 tags={post.tags}
+                views={views}
               />
             </li>
           ))}
