@@ -4,8 +4,6 @@ import { Tag } from "@/components/tag";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getAllTags, getPostsByTagSlug, sortTagsByCount } from "@/lib/utils";
 import { slug } from "github-slugger";
-import { Metadata } from "next";
-
 import { Redis } from "@upstash/redis";
 
 const redis = Redis.fromEnv();
@@ -15,22 +13,6 @@ interface TagPageProps {
   params: {
     tag: string;
   };
-}
-
-
-export async function getPostViews(
-  displayPosts: { slug: string }[]
-): Promise<Record<string, number>> {
-  const views = (
-    await redis.mget<number[]>(
-      ...displayPosts.map((p) => ["pageviews", "posts", p.slug].join(":"))
-    )
-  ).reduce((acc, v, i) => {
-    acc[displayPosts[i].slug] = v ?? 0;
-    return acc;
-  }, {} as Record<string, number>);
-
-  return views;
 }
 
 export const generateStaticParams = () => {
