@@ -15,7 +15,7 @@
 
 Haii 👋 you can use this code for your own website, but please dont forget me for copyright 😊.
 
-Please note that the design of the website is inspired from "https://fahreziadha.com/", but didn't copied all the code, However, i built the portfolio from scratch with `Next JS` and `Tailwind CSS`  and i added some other functionalities to it, so it might seems the same, but believe me i did a lot of work the code, website and how it works is entirely different!!!!. If you have questions about implementation, please refer to the [Next.js DOCS](https://nextjs.org/docs) same thing for Tailwind CSS and Framer Motion check out the Documentation, Or you can simply reach to me directly.
+Please note that the design of the website is inspired from "https://luma.com/" and "https://leerob.io/", but didn't copied all the code, However, i built the portfolio from scratch with `Next JS`, `Tailwind CSS`, `ShadCdn`,  `Velite`, `Upstash`  and i added some other functionalities to it, so it might seems the same, but believe me i did a lot of work the code, website and how it works is entirely different!!!!. If you have questions about implementation, please refer to the [Next.js DOCS](https://nextjs.org/docs) 
 
 ### 🛠 Fitur Website 2.0
 
