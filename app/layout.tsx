@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 import { Providers } from "@/components/providers";
 import { siteConfig } from "@/config/site";
 import { SiteFooter } from "@/components/site-footer";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-pt-[3.5rem]" suppressHydrationWarning>
+       <GoogleTagManager gtmId="G-ECT1QV7NQY" />
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased ",
