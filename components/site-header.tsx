@@ -29,7 +29,7 @@ export function SiteHeader() {
     <header
       className={`${
         header ? "border-b border-border " : ""
-      } sticky top-0 w-full bg-background/30 backdrop-blur-xl`}
+      } sticky top-0 w-full z-10 bg-background/30 backdrop-blur-xl`}
     >
       <div className="container flex h-14 max-w-screen-2xl items-center ">
         <MainNav />
