@@ -104,12 +104,42 @@ export default async function Home() {
           />
         </div>
       </section>
-      <section className="container max-w-4xl py-6 lg:py-10 flex flex-col space-y-6">
+      <section className="container max-w-4xl py-6 lg:py-10 flex flex-col">
         <h2 className="text-2xl font-black text-center font-helvetica">
           Experience
         </h2>
         <hr className="my-2" />
-        <div className="prose prose-zinc dark:prose-invert max-w-full w-full">
+        <div className="prose prose-zinc dark:prose-invert max-w-full w-full mt-4">
+          <p className="dark:text-gray-400 ">May 2024 - Aug 2024</p>
+          <h1 className="text-xl">
+            <span className="font-helvetica">Backend Engineer at</span>
+            <a
+              href="https://peduly.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline px-2"
+            >
+              Peduly
+            </a>
+          </h1>
+
+          <p className="dark:text-gray-400 ">
+            Lead Laravel backend development for websites and web applications
+            <br />
+            Implement API integrations to enhance functionality.
+          </p>
+
+          <h3 id="stack-used" data-svelte-h="svelte-ghvkof">
+            Stack used
+          </h3>
+          <ul>
+            <li>Laravel</li>
+            <li>Midtrans</li>
+            <li>mysql</li>
+          </ul>
+        </div>
+        <hr className="my-2" />
+        <div className="prose prose-zinc dark:prose-invert max-w-full w-full mt-4">
           <p className="dark:text-gray-400 ">August 2023 - Present</p>
           <h1 className="text-xl my-2">
             <span className="font-helvetica">Programmer at</span>

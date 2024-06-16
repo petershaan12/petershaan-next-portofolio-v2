@@ -52,7 +52,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           <h1 className="inline-block font-black text-2xl font-helvetica">
             My Blog
           </h1>
-          <p>silahkan baca aja kalau perlu 🐲</p>
+          <p>please read aja kalau perlu 🐲, kadang indo & kadang english</p>
         </div>
       </div>
       <div className="grid grid-cols-12 gap-3 mt-8">
