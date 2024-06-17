@@ -14,6 +14,7 @@ export async function GET(req: NextRequest) {
 
     const { searchParams } = req.nextUrl;
     const title = searchParams.get("title");
+    const logo = "</ps>";
 
     if (!title) {
       return new Response("No title provider", { status: 500 });
@@ -24,40 +25,28 @@ export async function GET(req: NextRequest) {
 
     return new ImageResponse(
       (
-        <div tw="flex relative flex-col p-12 w-full h-full items-start text-black bg-white">
+        <div
+          tw="flex relative flex-col p-36 w-full h-full items-start text-white "
+          style={{
+            backgroundImage: `url(${process.env.NEXT_PUBLIC_APP_URL}/background_ogi.jpg)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div tw="flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M4 11a9 9 0 0 1 9 9" />
-              <path d="M4 4a16 16 0 0 1 16 16" />
-              <circle cx="5" cy="19" r="1" />
-            </svg>
-            <p tw="ml-2 font-bold text-2xl">JollyBlog</p>
+            <p tw="ml-2 font-bold text-4xl">{logo}</p>
           </div>
           <div tw="flex flex-col flex-1 py-10">
-            <div tw="flex text-xl uppercase font-bold tracking-tight font-normal">
-              BLOG POST
-            </div>
-            <div tw="flex text-[80px] font-bold text-[50px]">{heading}</div>
+            <div tw="flex text-[100px] font-bold">{heading}</div>
           </div>
-          <div tw="flex items-center w-full justify-between">
-            <div tw="flex text-xl">{siteConfig.url}</div>
-            <div tw="flex items-center text-xl">
-              <div tw="flex ml-2">{siteConfig.links.github}</div>
-            </div>
+          <div tw="flex items-center w-full justify-between ">
+            <div tw="flex text-3xl">{siteConfig.url}</div>
           </div>
         </div>
       ),
       {
-        width: 1200,
-        height: 630,
+        width: 1920,
+        height: 1080,
         fonts: [
           {
             name: "Inter",
