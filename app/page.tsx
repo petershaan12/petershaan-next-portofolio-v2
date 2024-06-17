@@ -25,35 +25,43 @@ export default async function Home() {
   return (
     <>
       <section className="space-y-6 pb-8 pt-6 md:pb-12 mb:mt-10 lg:pt-12 ">
-        <div className="container flex flex-col gap-4 px-8">
-          <h1 className=" sm:text-2xl font-black text-balance font-helvetica ">
-            hey 🐲, i&apos;m Peter Shaan
+        <div className="container flex flex-col gap-4">
+          <h1 className=" sm:text-2xl font-bold text-balance ">
+            Yo 🐲, i&apos;m Peter Shaan
           </h1>
-          <p className=" mx-auto text-muted-foreground text-balance text-gray-100 ">
-            21 years old from 🇮🇩,🖥️ Student of Informatic Technology, and also
-            Content Creator and Video Editor
+          <p className="mx-auto prose prose-neutral dark:prose-invert ">
+            22 years old from 🇮🇩, final Year Student of Informatic Technology,
+            and also Content Creator and Video Editor, Really like
+            <a
+              href="https://nextjs.org"
+              target="_blank"
+              className="ml-2 inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+            >
+              <img
+                src="/icon/next_dark.png"
+                className="inline-flex m-0 mr-1"
+                alt="image kecil"
+                width={14}
+                height={14}
+              />
+              Next.js
+            </a>{" "}
+            and
+            <a
+              href="https://nextjs.org"
+              target="_blank"
+              className="ml-2 inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+            >
+              <img
+                src="/icon/react.png"
+                className="inline-flex m-0 mr-1"
+                alt="image kecil"
+                width={14}
+                height={14}
+              />
+              React
+            </a>
           </p>
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="mailto:contactpetershaan@gmail.com"
-              className={cn(
-                buttonVariants({ size: "lg" }),
-                "w-full h-10 sm:w-fit bg-green-400 hover:bg-green-800 hover:text-white text-black"
-              )}
-            >
-              Email Me
-            </Link>
-            <Link
-              href="/projects"
-              rel="noreferrer"
-              className={cn(
-                buttonVariants({ variant: "outline" }),
-                "w-full sm:w-fit hover:bg-green-300/10 dark:border-green-200 dark:text-green-100 hover:text-green-100"
-              )}
-            >
-              See My Projects
-            </Link>
-          </div>
         </div>
       </section>
       <section className="grid grid-cols-3 px-8 gap-3">
@@ -105,14 +113,12 @@ export default async function Home() {
         </div>
       </section>
       <section className="container max-w-4xl py-6 lg:py-10 flex flex-col">
-        <h2 className="text-2xl font-black text-center font-helvetica">
-          Experience
-        </h2>
+        <h2 className="text-2xl font-semibold text-center ">Experience</h2>
         <hr className="my-2" />
         <div className="prose prose-zinc dark:prose-invert max-w-full w-full mt-4">
-          <p className="dark:text-gray-400 ">May 2024 - Aug 2024</p>
+          <p>May 2024 - Aug 2024</p>
           <h1 className="text-xl">
-            <span className="font-helvetica">Backend Engineer at</span>
+            <span className="font-semibold">Backend Engineer at</span>
             <a
               href="https://peduly.com"
               target="_blank"
@@ -123,15 +129,13 @@ export default async function Home() {
             </a>
           </h1>
 
-          <p className="dark:text-gray-400 ">
+          <p className=" prose prose-neutral dark:prose-invert">
             Lead Laravel backend development for websites and web applications
             <br />
             Implement API integrations to enhance functionality.
           </p>
 
-          <h3 id="stack-used" data-svelte-h="svelte-ghvkof">
-            Stack used
-          </h3>
+          <h5>Stack used</h5>
           <ul>
             <li>Laravel</li>
             <li>Midtrans</li>
@@ -140,9 +144,9 @@ export default async function Home() {
         </div>
         <hr className="my-2" />
         <div className="prose prose-zinc dark:prose-invert max-w-full w-full mt-4">
-          <p className="dark:text-gray-400 ">August 2023 - Present</p>
+          <p>August 2023 - Present</p>
           <h1 className="text-xl my-2">
-            <span className="font-helvetica">Programmer at</span>
+            <span className="font-semibold">Programmer at</span>
             <a
               href="https://unai.edu"
               target="_blank"
@@ -153,21 +157,23 @@ export default async function Home() {
             </a>
           </h1>
 
-          <p className="dark:text-gray-400 ">
+          <p className="prose prose-neutral dark:prose-invert ">
             Create & Develop Website{" "}
             <a
               href="https://unai.edu"
-              className="underline font-medium text-black dark:text-gray-400 "
+              target="_blank"
+              className="mx-2 inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
             >
               unai.edu
-            </a>{" "}
-            <span>& </span>
+            </a>
+            &
             <a
               href="https://news.unai.edu"
-              className="underline font-medium text-black dark:text-gray-400 "
+              target="_blank"
+              className="mx-2 inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
             >
               news.unai.edu
-            </a>{" "}
+            </a>
             (NEW 2024) <br /> Development & Database Administrator Module UNAI
             (Universitas Advent Indonesia)
           </p>
@@ -179,11 +185,7 @@ export default async function Home() {
             alt="unai_revamp"
           />
 
-          <a>unai.edu</a>
-
-          <h3 id="stack-used" data-svelte-h="svelte-ghvkof">
-            Stack used
-          </h3>
+          <h5 className="mt-4 ">Stack used</h5>
           <ul>
             <li>php</li>
             <li>Bootstrap</li>

@@ -7,8 +7,8 @@ import { Providers } from "@/components/providers";
 import { siteConfig } from "@/config/site";
 import { SiteFooter } from "@/components/site-footer";
 import { GoogleTagManager } from "@next/third-parties/google";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -30,18 +30,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-pt-[3.5rem]" suppressHydrationWarning>
-       <GoogleTagManager gtmId="G-ECT1QV7NQY" />
+      <GoogleTagManager gtmId="G-ECT1QV7NQY" />
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased ",
-          inter.variable
+          GeistSans.className
         )}
       >
         <Providers>
-          <div className="relative flex min-h-dvh flex-col ">
+          <div className="relative flex flex-col ">
             <SiteHeader />
-            <div className="css-gradient bg-custom-gradient"></div>
-            <main className="flex-1 max-w-3xl mx-auto">{children}</main>
+            {/* <div className="css-gradient bg-custom-gradient"></div> */}
+            <main className="flex-1 antialiased max-w-2xl mx-auto">
+              {children}
+            </main>
             <SiteFooter />
           </div>
         </Providers>

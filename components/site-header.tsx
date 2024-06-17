@@ -5,33 +5,12 @@ import { MainNav } from "./main-nav";
 import { MobileNav } from "./mobile-nav";
 import { ModeToogle } from "./mode-toggle";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const [header, setHeader] = useState(false);
-  const scrollHeader = () => {
-    if (window.scrollY >= 20) {
-      setHeader(true);
-    } else {
-      setHeader(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", scrollHeader);
-
-    return () => {
-      window.addEventListener("scroll", scrollHeader);
-    };
-  }, []);
   return (
-    <header
-      className={`${
-        header ? "border-b border-border " : ""
-      } sticky top-0 w-full z-10 bg-background/30 backdrop-blur-xl`}
-    >
-      <div className="container flex h-14 max-w-screen-2xl items-center ">
+    <header className="mt-10">
+      <div className="container flex h-14 max-w-2xl items-center ">
         <MainNav />
         <div className="flex flex-1 items-center justify-end ">
           <nav className="flex items-center  space-x-6">

@@ -37,8 +37,12 @@ const ToolsItem: React.FC<ToolsItemProps> = ({
           height={50}
           alt={`project_${toolName.replace(/\s+/g, "").toLowerCase()}`}
         />
-        <p className="font-semibold dark:text-gray-400">{toolName}</p>
-        <p className="text-xs dark:text-gray-400">{description}</p>
+        <p className="font-semibold prose prose-neutral dark:prose-invert ">
+          {toolName}
+        </p>
+        <p className="text-xs prose prose-neutral dark:prose-invert ">
+          {description}
+        </p>
         <svg
           className="absolute top-4 right-4 group-hover:scale-100 scale-0 transition rotate-180 group-hover:rotate-0 duration-300"
           width="18px"

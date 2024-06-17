@@ -12,7 +12,7 @@ export function Tag({ tag, current, count }: TagProps) {
     <Link
       className={badgeVariants({
         variant: current ? "default" : "secondary",
-        className: "no-underline rounded-md",
+        className: "no-underline rounded-md text-xs font-light opacity-70",
       })}
       href={`/tags/${slug(tag)}`}
     >
