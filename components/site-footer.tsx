@@ -5,7 +5,7 @@ import { Icons } from "./icons";
 export function SiteFooter() {
   return (
     <footer>
-      <div className="mb-6 flex flex-col items-center">
+      <div className="my-12 flex flex-col items-center">
         <div className="py-7 flex  gap-10  text-xl text-gray-400 dark:text-white dark:opacity-50">
           <a target="_blank" rel="noreferrer" href={siteConfig.links.youtube}>
             <span className="sr-only">Youtube</span>
@@ -26,7 +26,7 @@ export function SiteFooter() {
           </a>
         </div>
         <div className="gradient-text text-xs -mt-2 mb-5 text-gray-500 dark:text-white opacity-50">
-          ©2024 Peter Shaan, All Rights Reserved ↗
+          ©2024 Peter Shaan, All Rights Reserved
         </div>
       </div>
     </footer>

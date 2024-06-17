@@ -30,8 +30,23 @@ export default async function Home() {
             Yo 🐲, i&apos;m Peter Shaan
           </h1>
           <p className="mx-auto prose prose-neutral dark:prose-invert ">
-            22 years old from 🇮🇩, final Year Student of Informatic Technology,
-            and also Content Creator and Video Editor, Really like
+            22 years old from 🇮🇩, final Year Student of Informatic Technology, a
+            Fullstack developer and also
+            <a
+              href="https://youtube.com/petershaan_"
+              target="_blank"
+              className="ml-1 inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+            >
+              <img
+                src="/icon/yt.png"
+                className="inline-flex m-0 mr-1"
+                alt="image kecil"
+                width={14}
+                height={14}
+              />
+              Content Creator
+            </a>{" "}
+            and Video Editor, Lovely using
             <a
               href="https://nextjs.org"
               target="_blank"
@@ -111,6 +126,20 @@ export default async function Home() {
             height={500}
           />
         </div>
+      </section>
+      <section className="container mt-5">
+        <p className="mx-auto prose prose-neutral dark:prose-invert ">
+          Back in high school, I joined some online course that got me obsessed
+          with programming. Huge thanks to Kak Justify for kickstarting my
+          journey. That&apos;s when I began my path to becoming a programmer. I
+          started out as a local editor, which made me fall in love with design
+          and coding. Now, I&apos;m all about both.
+        </p>
+        <p className="mx-auto prose prose-neutral dark:prose-invert mt-5">
+          I&apos;m truly believe that sharing programming knowledge can help a
+          lot of people out there become creators, not just users or consumers
+          of apps.
+        </p>
       </section>
       <section className="container max-w-4xl py-6 lg:py-10 flex flex-col">
         <h2 className="text-2xl font-semibold text-center ">Experience</h2>

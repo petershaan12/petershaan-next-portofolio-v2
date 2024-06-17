@@ -10,10 +10,7 @@ export default async function ProjectPage() {
   return (
     <div className="container max-w-6xl py-6 lg:py-10">
       <div className="flex flex-col">
-        <h1 className="text-2xl font-semibold">My Projects</h1>
-        <p className="prose prose-neutral dark:prose-invert ">
-          berikut adalah experience aku dibidang Pekerjaan & Projek
-        </p>
+        <h1 className="text-2xl font-semibold">my projects</h1>
       </div>
       <hr className="my-5" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6  mt-8">

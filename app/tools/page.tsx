@@ -13,9 +13,6 @@ export default async function ProjectPage() {
     <div className="container max-w-6xl py-6 lg:py-10">
       <div className="flex flex-col">
         <h1 className="text-2xl font-semibold">Tools</h1>
-        <p className="prose prose-neutral dark:prose-invert ">
-          mulai dari hal development, design, maupun produktivitas
-        </p>
       </div>
       <hr className="my-5" />
       <div className="grid grid-cols-2 gap-2">
