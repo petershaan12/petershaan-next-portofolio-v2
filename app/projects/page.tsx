@@ -16,7 +16,7 @@ export default async function ProjectPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6  mt-8">
         <ProjectsItem
           src="/blog/bangkit.png"
-          title="Capstone Project Bangkit Academy 2024 Batch 1"
+          title="Fungi.info - Capstone Bangkit Academy 2024 Batch 1"
           tags={["Android", "Kotlin", "Tensorflow Lite"]}
           year="2024"
           url="https://github.com/Fungi-info-Bangkit-Capstone/android"
