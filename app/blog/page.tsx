@@ -50,7 +50,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       <div className="flex flex-col">
         <h1 className="text-2xl font-semibold">Blog</h1>
         <p className="prose prose-neutral dark:prose-invert ">
-          please read aja kalau perlu, kadang indo & kadang english
+          please read if you need, i made 3-5 minutes reader for you
         </p>
       </div>
       <div className="grid grid-cols-12 gap-3 mt-8">

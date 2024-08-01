@@ -27,7 +27,13 @@ export default async function Home() {
       <section className="space-y-6 pb-8 pt-6 md:pb-12 mb:mt-10 lg:pt-12 ">
         <div className="container flex flex-col gap-4">
           <h1 className=" sm:text-2xl font-bold text-balance ">
-            Yo 🐲, i&apos;m Peter Shaan
+            Yo,{" "}
+            <img
+              src="https://media1.giphy.com/media/M7W5CFczuzKBPFSumd/200w.gif"
+              width="40px"
+              style={{ display: "inline", marginRight: "10px" }}
+            />
+            i&apos;m Peter Shaan
           </h1>
           <p className="mx-auto prose prose-neutral dark:prose-invert ">
             22 years old from 🇮🇩, final Year Student of Informatic Technology, a
