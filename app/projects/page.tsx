@@ -15,6 +15,13 @@ export default async function ProjectPage() {
       <hr className="my-5" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6  mt-8">
         <ProjectsItem
+          src="/projects/11isc.png"
+          title="11 ISC - The 11th International Scholars Conference"
+          tags={["Wordpress", "Imevent"]}
+          year="2024"
+          url="https://11isc.unai.edu/"
+        />
+        <ProjectsItem
           src="/blog/bangkit.png"
           title="Fungi.info - Capstone Bangkit Academy 2024 Batch 1"
           tags={["Android", "Kotlin", "Tensorflow Lite"]}
