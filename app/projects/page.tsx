@@ -15,6 +15,13 @@ export default async function ProjectPage() {
       <hr className="my-5" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6  mt-8">
         <ProjectsItem
+          src="/projects/pmb.png"
+          title="Revamp Design PMB UNAI"
+          tags={["Laravel", "Tailwind"]}
+          year="2024"
+          url="https://pmb.unai.edu/"
+        />
+        <ProjectsItem
           src="/projects/11isc.png"
           title="11 ISC - The 11th International Scholars Conference"
           tags={["Wordpress", "Imevent"]}
