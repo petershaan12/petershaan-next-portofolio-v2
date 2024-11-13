@@ -28,6 +28,13 @@ export default async function ProjectPage() {
           year="2024"
           url="https://riot-id.vercel.app/"
         />
+       <ProjectsItem
+          src="/projects/pmb.png"
+          title="Revamp Design PMB UNAI"
+          tags={["Laravel", "Tailwind"]}
+          year="2024"
+          url="https://pmb.unai.edu/"
+        />
         <ProjectsItem
           src="/projects/11isc.png"
           title="11 ISC - The 11th International Scholars Conference"
