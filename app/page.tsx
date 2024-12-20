@@ -151,6 +151,31 @@ export default async function Home() {
         <h2 className="text-2xl font-semibold text-center ">Experience</h2>
         <hr className="my-2" />
         <div className="prose prose-zinc dark:prose-invert max-w-full w-full mt-4">
+          <p>Dec 2024</p>
+          <h1 className="text-xl">
+            <span className="font-semibold">Software Developer at</span>
+            <a
+              href="https://www.adidata.co.id/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline px-2"
+            >
+              PT. Adi Data Informatika
+            </a>
+          </h1>
+
+          <p className=" prose prose-neutral dark:prose-invert">
+          Agile Method SCRUM <br />
+          Fullstack Software Developer for External Client with Internal Project in PT Sarana Multi Infrastrukture
+          </p>
+          <h5>Stack used</h5>
+          <ul>
+            <li>Laravel</li>
+            <li>Lifewire</li>
+          </ul>
+        </div>
+        <hr className="my-2" />
+        <div className="prose prose-zinc dark:prose-invert max-w-full w-full mt-4">
           <p>May 2024 - Aug 2024</p>
           <h1 className="text-xl">
             <span className="font-semibold">Backend Engineer at</span>

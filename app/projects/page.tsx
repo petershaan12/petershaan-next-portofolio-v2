@@ -15,6 +15,13 @@ export default async function ProjectPage() {
       <hr className="my-5" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6  mt-8">
         <ProjectsItem
+          src="/blog/make_wedding_invitation.png"
+          title="Weedingly"
+          tags={["Next Js"]}
+          year="2024"
+          url="https://weddingly-free.vercel.app/"
+        />
+         <ProjectsItem
           src="/projects/emsaec.png"
           title="E-MSAEC"
           tags={["React JS", "Laravel API"]}
