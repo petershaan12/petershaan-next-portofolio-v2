@@ -204,7 +204,7 @@ export default async function Home() {
         </div>
         <hr className="my-2" />
         <div className="prose prose-zinc dark:prose-invert max-w-full w-full mt-4">
-          <p>August 2023 - Present</p>
+          <p>August 2023 - May 2024</p>
           <h1 className="text-xl my-2">
             <span className="font-semibold">Programmer at</span>
             <a
