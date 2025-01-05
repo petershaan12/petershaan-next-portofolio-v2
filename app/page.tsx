@@ -151,7 +151,7 @@ export default async function Home() {
         <h2 className="text-2xl font-semibold text-center ">Experience</h2>
         <hr className="my-2" />
         <div className="prose prose-zinc dark:prose-invert max-w-full w-full mt-4">
-          <p>Dec 2024</p>
+          <p>Dec 2024 - Now</p>
           <h1 className="text-xl">
             <span className="font-semibold">Software Developer at</span>
             <a
@@ -164,10 +164,18 @@ export default async function Home() {
             </a>
           </h1>
 
-          <p className=" prose prose-neutral dark:prose-invert">
-          Agile Method SCRUM <br />
-          Fullstack Software Developer for External Client with Internal Project in PT Sarana Multi Infrastrukture
-          </p>
+            <p className="prose prose-neutral dark:prose-invert">
+            Agile Method SCRUM <br />
+            Fullstack Software Developer for External Client with Internal Project in
+            <a
+              href="https://www.ptsmi.co.id/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline px-2"
+            >
+              PT Sarana Multi Infrastruktur
+            </a>
+            </p>
           <h5>Stack used</h5>
           <ul>
             <li>Laravel</li>
