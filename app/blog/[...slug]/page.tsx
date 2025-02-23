@@ -9,7 +9,6 @@ import { Tag } from "@/components/tag";
 import ReportView from "./view";
 
 import { Redis } from "@upstash/redis";
-import { Eye } from "lucide-react";
 
 const redis = Redis.fromEnv();
 export const revalidate = 0;

@@ -38,6 +38,12 @@ export default async function TagPage({ params }: TagPageProps) {
     return acc;
   }, {} as Record<string, number>);
 
+  sortedTags.map(
+    (t)=> {
+      console.log(slug(t) === tag)
+    }
+  )
+
   return (
     <div className="container max-w-4xl py-6 lg:py-10">
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
@@ -78,6 +84,7 @@ export default async function TagPage({ params }: TagPageProps) {
           </CardHeader>
           <CardContent className="flex flex-wrap gap-2">
             {sortedTags?.map((t) => (
+              // <p>{slug}</p>
               <Tag tag={t} key={t} count={tags[t]} current={slug(t) === tag} />
             ))}
           </CardContent>
